@@ -13,14 +13,11 @@ function _drawQuestions() {
   appState.activeQuestion = randomQuestion
   console.log(randomQuestion)
   setHTML('questions', randomQuestion.QuestionTemplate)
-
-
 }
 export class QuestionsController {
 
   constructor() {
     console.log('questions controller loaded')
-    // this.getQuestions()
     appState.on('questions', _drawQuestions)
   }
   async getQuestions(difficulty) {

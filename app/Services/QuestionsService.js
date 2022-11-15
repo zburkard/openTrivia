@@ -4,7 +4,7 @@ import { Question } from "../Models/Question.js"
 class QuestionsService {
 
   async getQuestions(difficulty) {
-    const response = await axios.get('https://opentdb.com/api.php?amount=10&category=15&', + difficulty, + '=medium&type=multiple')
+    const response = await axios.get('https://opentdb.com/api.php?amount=10&category=15&difficulty=' + difficulty + '&type=multiple')
     console.log(response.data)
     appState.questions = response.data.results.map(questionData => new Question(questionData))
   }
